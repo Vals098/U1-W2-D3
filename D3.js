@@ -248,3 +248,8 @@ for (let i=0; i<femaleCharacters.length;i++) {
 /* --EXTRA-- ESERCIZIO 10
   Crea una funzionalità che selezioni un elemento casuale dall'array "starWarsCharacters" e ne stampi in console le proprietà in modo discorsivo (a tuo piacimento).
 */
+
+  const casual = Math.floor(Math.random()*starWarsCharacters.length)
+  const character = starWarsCharacters[casual]
+  console.log('I am '+ character.name + '.' + ' I identify as ' + character.gender + '.' + ' I am ' + character.skin_color + ', I have '+ character.eye_color + ' eyes and my weight is '+ character.mass + '.')
+
