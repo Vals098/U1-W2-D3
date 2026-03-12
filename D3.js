@@ -189,7 +189,7 @@ let crewMass = 0
 let i = 0
 
 while (i < starWarsCharacters.length) {
-  crewMass = starWarsCharacters[i].mass + crewMass
+  crewMass += starWarsCharacters[i].mass
   i++ //senza di questo il loop rimane su 0. Terminale bloccato
 }
 
@@ -212,11 +212,11 @@ let spaceShipMass = crewMass
 
 if (spaceShipMass <= 500) {
   console.log("Ship is under loaded")
-} else if (spaceShipMass > 500 && spaceShipMass <= 700) {
+} else if (spaceShipMass <= 700) {
   console.log("Ship is half loaded")
-} else if (spaceShipMass > 700 && spaceShipMass <= 900) {
+} else if (spaceShipMass <= 900) {
   console.log("Warning: Load is over 700")
-} else if (spaceShipMass > 900 && spaceShipMass <= 1000) {
+} else if (spaceShipMass <= 1000) {
   console.log("Critical Load: Over 900")
 } else if (spaceShipMass > 1000) {
   console.log("DANGER! OVERLOAD ALERT: escape from ship now!")
@@ -237,6 +237,13 @@ for (let i = 0; i < starWarsCharacters.length; i++) {
   Utilizzando gli elementi presenti nell'array "femaleCharacters" rimuovi dall'array "charactersNames" le stringhe corrispondenti a personaggi con lo stesso nome.
   Una volta fatto crea un console.log per controllare la proprietà length di "charactersNames" prima e dopo l'operazione.
 */
+for (let i=0; i<femaleCharacters.length;i++) {
+  for(let j=0; j<charactersNames.length; j++) {
+    if(femaleCharacters[i].name === charactersNames[j]){
+      charactersNames.splice(j,1)
+    }
+  }
+}
 
 /* --EXTRA-- ESERCIZIO 10
   Crea una funzionalità che selezioni un elemento casuale dall'array "starWarsCharacters" e ne stampi in console le proprietà in modo discorsivo (a tuo piacimento).
